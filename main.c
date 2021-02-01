@@ -10,7 +10,8 @@ int main(void) {
     int continuerpartie = 1;
     //
     int nbjeu = 0;
-    unsigned int nbjeu2 = 0;
+    unsigned int nbjeu2;
+    unsigned int *pointeurJeu2 = &nbjeu2;
     unsigned int nbjeu3 = 0; 
     int choixmenu = 0;
     int choixmenu2 = 0;
@@ -141,25 +142,25 @@ int main(void) {
     case 2:
         system("cls");
         printf("Bienvenu dans le mode 2 joueurs !\nUn des deux joueurs est obliger de saisir un nombre pour que le second le devienne (jusqu'a 4,294,967,295)\n");
-        scanf("%d", &nbjeu2);
+        scanf("%d", &*pointeurJeu2);
         system("cls"); 
         printf("Maintenant au second joueur de devinnez !!! x)\n");
         scanf("%d", &nbjeu3);
-        while (nbjeu3 != nbjeu2)
+        while (nbjeu3 != *pointeurJeu2)
     {
-        if (nbjeu3 < nbjeu2)
+        if (nbjeu3 < *pointeurJeu2)
     {
         printf("C'est plus\n");
-        scanf("%d", &nbjeu);
+        scanf("%d", &nbjeu3);
     }
-    else if (nbjeu3 > nbjeu2)
+    else if (nbjeu3 > *pointeurJeu2)
     {
         printf("C'est moins\n");
         scanf("%d", &nbjeu3);
     }
     i++;
     }
-    if (nbjeu3 == nbjeu2)
+    if (nbjeu3 == *pointeurJeu2)
     {
         printf("Bravo, tu as gagne !\nEn %d coups\n", i);
     }
@@ -304,25 +305,25 @@ scanf("%d", &continuerpartie);
     case 2:
         system("cls");
         printf("Bienvenu dans le mode 2 joueurs !\nUn des deux joueurs est obliger de saisir un nombre pour que le second le devienne (jusqu'a 4,294,967,295)\n");
-        scanf("%d", &nbjeu2);
+        scanf("%d", &*pointeurJeu2);
         system("cls"); 
         printf("Maintenant au second joueur de devinnez !!! x)\n");
         scanf("%d", &nbjeu3);
-        while (nbjeu3 != nbjeu2)
+        while (nbjeu3 != *pointeurJeu2)
     {
-        if (nbjeu3 < nbjeu2)
+        if (nbjeu3 < *pointeurJeu2)
     {
         printf("C'est plus\n");
-        scanf("%d", &nbjeu);
+        scanf("%d", &nbjeu3);
     }
-    else if (nbjeu3 > nbjeu2)
+    else if (nbjeu3 > *pointeurJeu2)
     {
         printf("C'est moins\n");
         scanf("%d", &nbjeu3);
     }
     i++;
     }
-    if (nbjeu3 == nbjeu2)
+    if (nbjeu3 == *pointeurJeu2)
     {
         printf("Bravo, tu as gagne !\nEn %d coups\n", i);
     }
